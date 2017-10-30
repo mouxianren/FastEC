@@ -1,5 +1,9 @@
 package com.yiqi.latte_core.app;
 
+import com.joanzapata.iconify.IconFontDescriptor;
+import com.joanzapata.iconify.Iconify;
+
+import java.util.ArrayList;
 import java.util.WeakHashMap;
 
 /**
@@ -9,6 +13,8 @@ import java.util.WeakHashMap;
 public class Configurator {
     private static final WeakHashMap<String, Object> LATTLE_CONFIGS = new WeakHashMap<String, Object>();
 
+
+    private static final ArrayList<IconFontDescriptor> ICONS=new ArrayList<IconFontDescriptor>();
     /**
      *
      */
@@ -24,6 +30,7 @@ public class Configurator {
 
     //初始化完成
     public final void configure() {
+        initIcons();
         LATTLE_CONFIGS.put(ConfigType.CONFIG_READY.name(), true);
     }
 
@@ -52,6 +59,21 @@ public class Configurator {
         return (T) LATTLE_CONFIGS.get(key.name());
 
     }
+
+    private void initIcons(){
+        if(ICONS.size()>0){
+            final Iconify.IconifyInitializer initializer=Iconify.with(ICONS.get(0));
+            for(int i=1;i<ICONS.size();i++){
+                initializer.with(ICONS.get(i));
+            }
+
+        }
+    }
+    public final Configurator withIcon(IconFontDescriptor descriptor){
+            ICONS.add(descriptor);
+        return this;
+    }
+
 
 
 }

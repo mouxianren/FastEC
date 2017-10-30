@@ -2,6 +2,7 @@ package com.yiqi.fastec;
 
 import android.app.Application;
 
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.yiqi.latte_core.app.Lattle;
 
 /**
@@ -12,6 +13,9 @@ public class ExampleApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Lattle.init(this).withApiHost("http:baidu.com").configure();
+        Lattle.init(this)
+                .withIcon(new FontAwesomeModule())
+                .withApiHost("http:baidu.com")
+                .configure();
     }
 }

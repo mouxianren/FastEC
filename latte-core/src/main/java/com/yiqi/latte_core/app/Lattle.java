@@ -17,6 +17,10 @@ public class Lattle {
     public static WeakHashMap<String, Object> getConfigurations() {
         return Configurator.getInstance().getLattleConfigs();
     }
+    public static Context getContext(){
+        return (Context)getConfigurations().get(ConfigType.APPLICATION_CONTEXT.name());
+    }
+
 
 
 
