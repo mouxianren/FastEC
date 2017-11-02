@@ -4,14 +4,14 @@ import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
 import java.util.ArrayList;
-import java.util.WeakHashMap;
+import java.util.HashMap;
 
 /**
  * Created by moumou on 17/10/30.
  */
 
 public class Configurator {
-    private static final WeakHashMap<String, Object> LATTLE_CONFIGS = new WeakHashMap<String, Object>();
+    private static final HashMap<String, Object> LATTLE_CONFIGS = new HashMap<String, Object>();
 
 
     private static final ArrayList<IconFontDescriptor> ICONS=new ArrayList<IconFontDescriptor>();
@@ -38,7 +38,7 @@ public class Configurator {
         return Holder.INSTANCE;
     }
 
-    final WeakHashMap<String, Object> getLattleConfigs() {
+    final HashMap<String, Object> getLattleConfigs() {
         return LATTLE_CONFIGS;
     }
 

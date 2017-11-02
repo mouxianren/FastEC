@@ -2,7 +2,7 @@ package com.yiqi.latte_core.app;
 
 import android.content.Context;
 
-import java.util.WeakHashMap;
+import java.util.HashMap;
 
 /**
  * Created by moumou on 17/10/30.
@@ -14,7 +14,7 @@ public class Lattle {
         return Configurator.getInstance();
     }
 
-    public static WeakHashMap<String, Object> getConfigurations() {
+    public static HashMap<String, Object> getConfigurations() {
         return Configurator.getInstance().getLattleConfigs();
     }
     public static Context getContext(){
